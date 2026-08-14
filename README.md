@@ -1,85 +1,112 @@
 # AI Resume Builder
 
-Production-ready web application for building resumes using AI.
+An AI-powered full-stack resume platform that helps users create, analyze, optimize, and tailor resumes for specific job opportunities.
+
+The application combines resume building, AI-assisted content generation, ATS analysis, job matching, resume tailoring, and interview preparation in one platform.
+
+## Features
+
+### Resume Builder
+- Create resumes using a structured resume editor
+- Manage personal information, education, experience, skills, projects, certifications, awards, languages, and custom sections
+- Live resume preview
+- Multiple professional resume templates
+- Resume version management
+- Import existing resumes
+- Export generated resumes
+
+### AI-Powered Resume Assistance
+- AI-generated resume content
+- AI-assisted improvements
+- Resume summary and section generation
+- Job-specific resume tailoring
+- AI assistant for resume-related tasks
+
+### ATS Analysis
+- Analyze resumes against Applicant Tracking System requirements
+- Identify missing or relevant keywords
+- Evaluate resume content
+- Provide optimization insights
+
+### Job Matching
+- Match resumes against job descriptions
+- Analyze role compatibility
+- Identify keyword and skill gaps
+- Provide detailed job-match results
+- Tailor resumes for specific job opportunities
+
+### Interview Preparation
+- Generate interview preparation material
+- Prepare questions and answers based on a target role
+- AI-assisted interview preparation
+
+### Authentication
+- User registration and login
+- JWT-based authentication
+- Protected application routes
+- User-specific resume data
+
+## Technology Stack
+
+### Frontend
+- React
+- Vite
+- Tailwind CSS
+- JavaScript
+- Axios
+- Recharts
+
+### Backend
+- Python
+- Django
+- Django REST Framework
+- JWT Authentication
+- PostgreSQL
+- Pandas
+
+### AI
+- Groq API
+- LLM-based resume analysis and generation
+- Abstract AI provider architecture
+- Mock AI provider for testing
+- OpenAI provider support
+
+### Documents
+- DOCX generation
+- PDF generation/conversion
+- Resume document processing
+
+### DevOps
+- Docker
+- Docker Compose
+- Nginx
+- Production-oriented environment configuration
+- Health and readiness endpoints
 
 ## Architecture
 
-- **Frontend**: React + Vite + Tailwind CSS
-- **Backend**: Django + Django REST Framework + PostgreSQL
-- **AI**: Abstracted LLM integration
-- **Documents**: DOCX generation and PDF conversion
-
-## Development
-
-### Local Setup
-1. Backend:
-   ```bash
-   cd backend
-   python -m venv venv
-   source venv/Scripts/activate # Windows
-   pip install -r requirements.txt
-   python manage.py migrate
-   python manage.py runserver
-   ```
-2. Frontend:
-   ```bash
-   cd frontend
-   npm install
-   npm run dev
-   ```
-
-## Production & Docker Testing
-
-This project includes Docker support for production and production-like local testing.
-
-1. Configure Environment:
-   ```bash
-   cp .env.example .env
-   # Edit .env with your secrets
-   ```
-
-2. Run with Docker Compose:
-   ```bash
-   docker-compose up --build -d
-   ```
-
-3. View Logs:
-   ```bash
-   docker-compose logs -f
-   ```
-
-4. Run Migrations (if not auto-run by entrypoint):
-   ```bash
-   docker-compose exec backend python manage.py migrate
-   ```
-
-## Testing
-
-Backend:
-```bash
-cd backend
-venv\Scripts\python manage.py test
-```
-
-Frontend:
-```bash
-cd frontend
-npm run test
-```
-
-## Setup Instructions
-
-### Prerequisites
-- Docker & Docker Compose
-- Node.js (for local frontend dev)
-- Python 3.10+ (for local backend dev)
-
-### Getting Started (Docker)
-1. Copy `.env.example` to `.env` and fill in values.
-2. Run `docker-compose up --build`
-3. Access frontend at `http://localhost:5173`
-4. Access backend at `http://localhost:8000`
-
-### Phase 1 Features
-- Basic project structure
-- Health endpoint (`GET /api/health/`)
+```text
+┌───────────────────────┐
+│      React Frontend   │
+│   Vite + Tailwind CSS │
+└───────────┬───────────┘
+            │
+            │ REST API
+            ▼
+┌───────────────────────┐
+│   Django REST API     │
+│                       │
+│ Authentication        │
+│ Resume Management     │
+│ ATS Analysis          │
+│ Job Matching          │
+│ Interview Preparation │
+│ Document Generation   │
+└───────────┬───────────┘
+            │
+      ┌─────┴─────┐
+      ▼           ▼
+┌───────────┐  ┌──────────────┐
+│ PostgreSQL│  │ AI Providers │
+│ Database  │  │ Groq/OpenAI  │
+└───────────┘  └──────────────┘
