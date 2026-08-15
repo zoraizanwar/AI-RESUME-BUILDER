@@ -110,3 +110,23 @@ The application combines resume building, AI-assisted content generation, ATS an
 │ PostgreSQL│  │ AI Providers │
 │ Database  │  │ Groq/OpenAI  │
 └───────────┘  └──────────────┘
+
+## Screenshots
+
+### Landing Page
+![Landing Page](screenshots/landing%20page.png)
+
+### AI Assistant
+![AI Assistant](screenshots/AI%20Assistant.png)
+
+### ATS Analyzer
+![ATS Analyzer](screenshots/ats%20analyzer.png)
+
+### Job Matcher
+![Job Matcher](screenshots/job%20matcher.png)
+
+### Interview Preparation
+![Interview Preparation](screenshots/Interview%20prep.png)
+
+### Resume Templates
+![Resume Templates](screenshots/templates.png)
