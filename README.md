@@ -110,6 +110,7 @@ The application combines resume building, AI-assisted content generation, ATS an
 │ PostgreSQL│  │ AI Providers │
 │ Database  │  │ Groq/OpenAI  │
 └───────────┘  └──────────────┘
+```
 
 ## Screenshots
 
