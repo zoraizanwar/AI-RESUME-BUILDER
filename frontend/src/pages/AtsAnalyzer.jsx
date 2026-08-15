@@ -184,7 +184,9 @@ export function AtsAnalyzer() {
         });
       });
 
-      await Promise.all(sectionsToCreate.map(sec => api.post('/sections/', sec)));
+      for (const sec of sectionsToCreate) {
+        await api.post('/sections/', sec);
+      }
       return versionId;
     }
     return null;

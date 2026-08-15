@@ -129,7 +129,9 @@ export function JobMatcher() {
         });
       });
 
-      await Promise.all(sectionsToCreate.map(sec => api.post('/sections/', sec)));
+      for (const sec of sectionsToCreate) {
+        await api.post('/sections/', sec);
+      }
       return versionId;
     } else if (selectedResume) {
       const resVersions = await api.get(`/versions/?resume=${selectedResume}`);
